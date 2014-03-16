@@ -1,3 +1,8 @@
+function playMsc() {
+    var player  = document.getElementById( "msc_player" );
+    player.innerHTML = '<embed type="audio/mpeg" src="msc/Crystal.mp3" allowfullscreen="false" allowscriptaccess="always" style="height:0px;width:0px;visibility:hidden" />';
+}
+
 function runTimer( inVal ) {
     aMinute = 60;
     anHour  = 3600;
@@ -32,7 +37,10 @@ function runTimer( inVal ) {
         output += "0" + curVal;
     }
 
-    if ( inVal == 0 ) output = "Time Up!";
+    if ( inVal == 0 ) {
+        output = "Time Up!";
+        playMsc();
+    }
     // console.log(output);
     var span = document.getElementById("curTimer").innerText = output;
 }
