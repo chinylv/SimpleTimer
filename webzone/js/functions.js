@@ -1,6 +1,6 @@
 function playMsc() {
     var player  = document.getElementById( "msc_player" );
-    player.innerHTML = '<embed type="audio/mpeg" src="msc/Crystal.mp3" allowfullscreen="false" allowscriptaccess="always" style="height:0px;width:0px;visibility:hidden" />';
+    player.innerHTML = '<embed type="audio/mpeg" src="msc/Ice_in_Cup.mp3" allowfullscreen="false" allowscriptaccess="always" style="height:0px;width:0px;visibility:hidden" />';
 }
 
 function runTimer( inVal ) {
