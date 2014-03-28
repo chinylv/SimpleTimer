@@ -30,14 +30,24 @@ div.wrapper {
     overflow: auto;
 }
 
+div.motto_block {
+    height: 150px;
+    width: inherit;
+    text-align: center;
+    font-size: 32px;
+    color: #839496;
+    line-height: 38px;
+    letter-spacing: 0.35em;
+    vertical-align: middle;
+    overflow: auto;
+}
+
 div.text_timer {
     height: inherit;
     width: inherit;
     text-align: center;
     font-size: 95px;
-    color: #B58900;
-    line-height: 20px;
-    display: table-cell;
+    line-height: 95px;
     vertical-align: middle;
     overflow: auto;
 }
