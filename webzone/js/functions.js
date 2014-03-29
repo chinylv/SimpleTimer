@@ -1,3 +1,6 @@
+var intEvt = null;
+var timeLeft = -1;
+
 function playMsc() {
     var player  = document.getElementById( "msc_player" );
     player.innerHTML = '<embed type="audio/mpeg" src="msc/SMS_Mystery.mp3" allowfullscreen="false" allowscriptaccess="always" style="height:0px;width:0px;visibility:hidden" />';
@@ -11,7 +14,7 @@ function runTimer( inVal ) {
 
     if ( inVal < 0 || inVal > aDay ) return;
     var curVal  = inVal;
-    // console.log(curVal);
+    // console.log( curVal );
 
     hour    = Math.floor( curVal/anHour );
     curVal  -= curVal >= anHour ? hour * anHour : 0;
@@ -45,13 +48,31 @@ function runTimer( inVal ) {
     var span = document.getElementById("curTimer").innerText = output;
 }
 
-function startTimer( timeLeft ) {
-    aDay        = 86400;
-    if ( timeLeft == null ) timeLeft = 1500;
-    
-    timeLeft    = parseInt(timeLeft);
-    
-    if ( timeLeft < 0 || timeLeft > aDay) return;
+function startInterval() {
+    return setInterval( function() { if ( timeLeft >= 0 ) { runTimer(timeLeft); timeLeft--; } }, 1000 );
+}
 
-    var si = setInterval( function() { if ( timeLeft >= 0 ) { runTimer(timeLeft); timeLeft--; } }, 1000 );
+function startTimer( left ) {
+    aDay        = 86400;
+    if ( left == null ) left = 1500;
+
+    left    = parseInt( left );
+
+    if ( left < 0 || left > aDay ) return;
+
+    timeLeft    = left;
+
+    intEvt  = startInterval();
+}
+
+function checkSpaceKeyCode() {
+    // console.log( timeLeft );
+    if ( event.keyCode == 32 ) {
+        if ( intEvt != null ) {
+            clearInterval( intEvt );
+            intEvt  = null;
+        } else {
+            intEvt  = startInterval();
+        }
+    }
 }
