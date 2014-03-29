@@ -34,11 +34,12 @@ div.wrapper {
 div.motto_block {
     height: 150px;
     width: inherit;
+    font-family: monospace;
     text-align: center;
-    font-size: 32px;
-    color: #002833;
-    line-height: 38px;
-    letter-spacing: 0.55em;
+    font-size: 26px;
+    color: #839496;
+    line-height: 26px;
+    letter-spacing: 0.05em;
     vertical-align: middle;
     overflow: auto;
 }
