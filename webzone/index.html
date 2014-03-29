@@ -13,7 +13,9 @@
 
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript">
-    window.onload = function(){startTimer()};
+    window.onload = function(){ startTimer(); };
+    document.onkeydown = checkSpaceKeyCode;
+    document.onselectstart = function(){ return false; }
     </script>
 </head>
 
